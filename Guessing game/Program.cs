@@ -39,6 +39,7 @@ namespace Guessing_game
             }
 
             Console.WriteLine("hello");
+            Console.WriteLine("Test");
 
 
             Console.ReadLine();
