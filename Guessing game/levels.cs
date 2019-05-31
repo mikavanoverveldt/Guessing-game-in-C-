@@ -31,6 +31,8 @@ namespace Guessing_game
                     {
                         Console.WriteLine("Congratulations, you found the cheat code! The awnser is: ");
                         Console.WriteLine(randomNumber);
+                        Console.Write("Now type it in: ");
+                        guess = Convert.ToInt32(Console.ReadLine());
                     }
                     else if (guess <= 0 || guess >= 11)
                     {
@@ -93,6 +95,8 @@ namespace Guessing_game
                     {
                         Console.WriteLine("Congratulations, you found the cheat code! The awnser is: ");
                         Console.WriteLine(randomNumber);
+                        Console.Write("Now type it in: ");
+                        guess = Convert.ToInt32(Console.ReadLine());
                     }
                     else if (guess <= 0 || guess >= 26)
                     {
@@ -154,6 +158,8 @@ namespace Guessing_game
                     {
                         Console.WriteLine("Congratulations, you found the cheat code! The awnser is: ");
                         Console.WriteLine(randomNumber);
+                        Console.Write("Now type it in: ");
+                        guess = Convert.ToInt32(Console.ReadLine());
                     }
                     else if (guess <= 0 || guess >= 51)
                     {

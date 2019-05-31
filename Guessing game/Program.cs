@@ -40,12 +40,12 @@ namespace Guessing_game
                     }
                     else if(levelChoice > 2)
                     {
-                        Console.WriteLine("That is not an level option");
+                        Console.WriteLine("That is not an level option!");
                     }
                 }
                 catch (System.FormatException)
                 {
-                    Console.WriteLine("That is not an level option");
+                    Console.WriteLine("That is not an level option!");
                     Console.WriteLine("Easy - 0");
                     Console.WriteLine("Medium - 1");
                     Console.WriteLine("Hard - 2");
