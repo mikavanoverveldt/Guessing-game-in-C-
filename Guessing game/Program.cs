@@ -29,7 +29,7 @@ namespace Guessing_game
                 }
                 else
                 {
-                    Console.WriteLine("Unknown error");
+                    Console.WriteLine("Unknown Error");
                 }
             }
 
