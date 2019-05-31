@@ -6,40 +6,54 @@ namespace Guessing_game
     {
         static void Main(string[] args)
         {
-            Random random = new Random();
-            int randomNumber = random.Next(0, 11);
-            Console.WriteLine(randomNumber);
+            Frame.Title();
+            bool hasChosen = false;
+            Console.WriteLine("Welcome to the random number guessing game");
+            Console.WriteLine("Easy - 0");
+            Console.WriteLine("Medium - 1");
+            Console.WriteLine("Hard - 2");
+            Console.Write("What level do you want to play? ");
 
-            Console.WriteLine("Welcome to the random guessing game");
-            Console.Write("Guess a number between 0 and 10");
 
-            int guess = 0;
-            while (guess != randomNumber)
+            while (!hasChosen)
             {
-                guess = Convert.ToInt32(Console.ReadLine());
-                if (guess > randomNumber)
-                {
-                    Console.Write("That's too high! Try again: ");
-                    guess = Convert.ToInt32(Console.ReadLine());
+
+
+                try
+                {   int levelChoice = Convert.ToInt32(Console.ReadLine());
+                    if (levelChoice == 0)
+                    {
+                        Levels.easy();
+                        hasChosen = true;
+                    }
+                    else if (levelChoice == 1)
+                    {
+                        Levels.medium();
+                        hasChosen = true;
+
+                    }
+                    else if (levelChoice == 2)
+                    {
+                        Levels.hard();
+                        hasChosen = true;
+
+                    }
+                    else if(levelChoice > 2)
+                    {
+                        Console.WriteLine("That is not an level option");
+                    }
                 }
-                else if (guess < randomNumber)
+                catch (System.FormatException)
                 {
-                    Console.Write("That's too low! Try again: ");
-                    guess = Convert.ToInt32(Console.ReadLine());
-                }
-                else
-                {
-                    Console.WriteLine("Unknown Error");
+                    Console.WriteLine("That is not an level option");
+                    Console.WriteLine("Easy - 0");
+                    Console.WriteLine("Medium - 1");
+                    Console.WriteLine("Hard - 2");
+                    Console.Write("What level do you want to play? ");
                 }
             }
 
-            if (guess == randomNumber)
-            {
-                Console.WriteLine("You win!");
-            }
 
-            Console.WriteLine("hello");
-            Console.WriteLine("Test");
 
 
             Console.ReadLine();

@@ -10,7 +10,6 @@ namespace Guessing_game
         {
             Random random = new Random();
             int randomNumber = random.Next(1, 11);
-            Console.WriteLine(randomNumber);
 
             Console.WriteLine("Welcome to the random guessing game");
             Console.Write("Guess a number between 1 and 10: ");
@@ -28,7 +27,12 @@ namespace Guessing_game
             {
                 try
                 {
-                    if (guess <= 0 || guess >= 11)
+                    if(guess == 99)
+                    {
+                        Console.WriteLine("Congratulations, you found the cheat code! The awnser is: ");
+                        Console.WriteLine(randomNumber);
+                    }
+                    else if (guess <= 0 || guess >= 11)
                     {
                         Console.Write("That is not a valid guess! Try again: ");
                         guess = Convert.ToInt32(Console.ReadLine());
@@ -67,7 +71,6 @@ namespace Guessing_game
         {
             Random random = new Random();
             int randomNumber = random.Next(1, 26);
-            Console.WriteLine(randomNumber);
 
             Console.WriteLine("Welcome to the random guessing game");
             Console.Write("Guess a number between 1 and 25: ");
@@ -83,9 +86,15 @@ namespace Guessing_game
 
             while (guess != randomNumber)
             {
+
                 try
                 {
-                    if (guess <= 0 || guess >= 26)
+                    if (guess == 99)
+                    {
+                        Console.WriteLine("Congratulations, you found the cheat code! The awnser is: ");
+                        Console.WriteLine(randomNumber);
+                    }
+                    else if (guess <= 0 || guess >= 26)
                     {
                         Console.Write("That is not a valid guess! Try again: ");
                         guess = Convert.ToInt32(Console.ReadLine());
@@ -124,7 +133,6 @@ namespace Guessing_game
         {
             Random random = new Random();
             int randomNumber = random.Next(1, 51);
-            Console.WriteLine(randomNumber);
 
             Console.WriteLine("Welcome to the random guessing game");
             Console.Write("Guess a number between 1 and 50: ");
@@ -142,7 +150,12 @@ namespace Guessing_game
             {
                 try
                 {
-                    if (guess <= 0 || guess >= 51)
+                    if (guess == 99)
+                    {
+                        Console.WriteLine("Congratulations, you found the cheat code! The awnser is: ");
+                        Console.WriteLine(randomNumber);
+                    }
+                    else if (guess <= 0 || guess >= 51)
                     {
                         Console.Write("That is not a valid guess! Try again: ");
                         guess = Convert.ToInt32(Console.ReadLine());
