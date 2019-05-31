@@ -1,3 +1,4 @@
 ### Guessing-game-in-C-
-Dit is mika zijn eerste programma.
+This is my first program
+The game is simple, you have to guess a number
 # YEET
