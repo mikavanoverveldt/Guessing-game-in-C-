@@ -1,5 +1,5 @@
 ﻿using System;
-// hallo
+
 namespace Guessing_game
 {
     class Program
