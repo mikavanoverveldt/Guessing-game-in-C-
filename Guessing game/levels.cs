@@ -69,6 +69,11 @@ namespace Guessing_game
             }
         }
 
+        internal static void Game(int numberRange)
+        {
+            throw new NotImplementedException();
+        }
+
         public static void medium()
         {
             Random random = new Random();
