@@ -6,57 +6,55 @@ namespace Guessing_game
     {
         static void Main(string[] args)
         {
-            Frame.Title();
-            bool hasChosen = false;
-            Console.WriteLine("Welcome to the random number guessing game");
-            Console.WriteLine("Easy - 0");
-            Console.WriteLine("Medium - 1");
-            Console.WriteLine("Hard - 2");
-            Console.Write("What level do you want to play? ");
-
-
-            while (!hasChosen)
+            do
             {
-
-
-                try
-                {   int levelChoice = Convert.ToInt32(Console.ReadLine());
-                    if (levelChoice == 0)
-                    {
-                        Levels.easy();
-                        hasChosen = true;
-                    }
-                    else if (levelChoice == 1)
-                    {
-                        Levels.medium();
-                        hasChosen = true;
-
-                    }
-                    else if (levelChoice == 2)
-                    {
-                        Levels.hard();
-                        hasChosen = true;
-
-                    }
-                    else if(levelChoice > 2)
-                    {
-                        Console.WriteLine("That is not an level option!");
-                    }
-                }
-                catch (System.FormatException)
+                int levelChoice;
+                int numberRange = 0;
+                bool invalidInput;
+                string playAgainInput;
+                Console.Clear();
+                Frame.Title();
+                Console.WriteLine("Welcome to the random number guessing game");
+                Console.WriteLine("Easy (1)");
+                Console.WriteLine("Medium (2)");
+                Console.WriteLine("Hard (3)");
+                do
                 {
-                    Console.WriteLine("That is not an level option!");
-                    Console.WriteLine("Easy - 0");
-                    Console.WriteLine("Medium - 1");
-                    Console.WriteLine("Hard - 2");
-                    Console.Write("What level do you want to play? ");
+                    invalidInput = true;                  
+                    Console.Write("Enter the level you want to play: ");
+                    try {
+                        levelChoice = Convert.ToInt32(Console.ReadLine());
+                    }
+                    catch {
+                        levelChoice = 0;
+                    }
+                    switch (levelChoice) {
+                        case 1:
+                            numberRange = 10;
+                            break;
+                        case 2:
+                            numberRange = 25;
+                            break;
+                        case 3:
+                            numberRange = 50;
+                            break;
+                        default:
+                            invalidInput = false;
+                            Console.WriteLine("That is not an level option!");
+                            Console.WriteLine();
+                            break;
+                    }
+                } while (invalidInput == false);
+                Levels.Game(numberRange);
+                Console.Write("Enter 'a' to play again: ");
+                playAgainInput = Console.ReadLine();
+                if (playAgainInput.Trim() == "a") {
+                    continue;
                 }
-            }
-
-
-
-
-            Console.ReadLine();
+                else {
+                    break;
+                }
+            } while (true);
         }
     }
 }
