@@ -11,23 +11,19 @@ namespace Guessing_game
             bool hasChosen;
             Frame.Title();           
             Console.WriteLine("Welcome to the random number guessing game");            
-            do
-            {                
+            do {                
                 hasChosen = true;
                 Console.WriteLine("Easy - 0");
                 Console.WriteLine("Medium - 1");
                 Console.WriteLine("Hard - 2");
                 Console.Write("What level do you want to play? ");
-            try
-            {
+            try {
                 levelChoice = Convert.ToInt32(Console.ReadLine());
-            }
-            catch 
-            {
+                }
+            catch {
                 levelChoice = 0;
-            }
-            switch (levelChoice)
-                {
+                }
+            switch (levelChoice) {
                     case 1:
                         numberRange = 10;
                         break;
